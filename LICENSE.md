@@ -12,23 +12,23 @@ Content is specifically marked as being subject to the CC License.
 Udacity expressly defines the following as falling outside the definition of
 "non-commercial":
 (a) the sale or rental of (i) any part of the Educational Content, (ii) any
-    derivative works based at least in part on the Educational Content, or (iii)
-    any collective work that includes any part of the Educational Content;
+derivative works based at least in part on the Educational Content, or (iii)
+any collective work that includes any part of the Educational Content;
 (b) the sale of access or a link to any part of the Educational Content without
-    first obtaining informed consent from the buyer (that the buyer is aware
-    that the Educational Content, or such part thereof, is available at the
-    Website free of charge);
+first obtaining informed consent from the buyer (that the buyer is aware
+that the Educational Content, or such part thereof, is available at the
+Website free of charge);
 (c) providing training, support, or editorial services that use or reference the
-    Educational Content in exchange for a fee;
+Educational Content in exchange for a fee;
 (d) the sale of advertisements, sponsorships, or promotions placed on the
-    Educational Content, or any part thereof, or the sale of advertisements,
-    sponsorships, or promotions on any website or blog containing any part of
-    the Educational Material, including without limitation any "pop-up
-    advertisements";
+Educational Content, or any part thereof, or the sale of advertisements,
+sponsorships, or promotions on any website or blog containing any part of
+the Educational Material, including without limitation any "pop-up
+advertisements";
 (e) the use of Educational Content by a college, university, school, or other
-    educational institution for instruction where tuition is charged; and
+educational institution for instruction where tuition is charged; and
 (f) the use of Educational Content by a for-profit corporation or non-profit
-    entity for internal professional development or training.
+entity for internal professional development or training.
 
 THE SERVICES AND ONLINE COURSES (INCLUDING ANY CONTENT) ARE PROVIDED "AS IS" AND
 "AS AVAILABLE" WITH NO REPRESENTATIONS OR WARRANTIES OF ANY KIND, EITHER
