@@ -43,4 +43,14 @@ export class CartService {
       0,
     );
   }
+
+  checkout(name: string, address: string, paymentDetails: string): void {
+    console.log('Checkout Details:', {
+      name,
+      address,
+      paymentDetails,
+      cartItems: this.cartItems,
+    });
+    this.clearCart();
+  }
 }
