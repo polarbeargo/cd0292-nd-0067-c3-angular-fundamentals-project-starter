@@ -7,7 +7,7 @@ MyStore is Angular application that allows users to view a list of available pro
 To run the MyStore project, follow these steps:
 1. **Clone the repository**:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/polarbeargo/nd-0067-c3-angular-fundamentals-project-starter.git
    ```
 2. **Navigate to the project directory**:
    ```bash
@@ -39,7 +39,7 @@ To run the MyStore project, follow these steps:
 - **Order confirmation page**, which shows the outcome after the user completes the checkout process (i.e., submits the checkout form)
 
 #### Development strategy
-
+We applied the `Observer` design pattern is already built into the core and is available through the EventEmitter class. It is used to create custom events in this Angular applications. The Observer pattern allows components to communicate with each other without being tightly coupled, promoting a more modular and maintainable codebase.
 1.  The `*ngFor` directive iterates over the `products emitted` by the `products$` `observable` using the `async pipe` whenever the observable emits new data, the template will automatically update.
 2. Each product is passed to the ProductItemComponent via the product input binding.
 3. The (addToCart) output `event` from the ProductItemComponent is listened to in the ProductListComponent, and it calls the addToCart method with the `emitted` product.
