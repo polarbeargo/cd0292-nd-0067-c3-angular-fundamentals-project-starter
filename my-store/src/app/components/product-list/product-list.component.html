@@ -1,8 +1,9 @@
 <div class="product-list">
-  <app-product-item
-    *ngFor="let product of products$ | async"
-    [product]="product"
-    (addToCart)="addToCart($event)"
-  >
-  </app-product-item>
+  <div *ngFor="let product of products$ | async" class="product-item">
+    <img [src]="product.imageUrl" alt="{{ product.name }}" />
+    <h2>{{ product.name }}</h2>
+    <p>{{ product.description }}</p>
+    <p>Price: {{ product.price | currency }}</p>
+    <button (click)="addToCart(product)">Add to Cart</button>
+  </div>
 </div>
