@@ -25,7 +25,7 @@ export const routes: Routes = [
     ConfirmationComponent,
     CartComponent,
   ],
-  imports: [RouterModule.forRoot(routes), CommonModule, FormsModule],
+  imports: [RouterModule.forChild(routes), CommonModule, FormsModule],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

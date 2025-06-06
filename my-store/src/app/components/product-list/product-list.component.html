@@ -1,9 +1,12 @@
 <div class="product-list">
   <div *ngFor="let product of products$ | async" class="product-item">
-    <img [src]="product.imageUrl" alt="{{ product.name }}" />
+    <img [src]=product.url alt="{{ product.name }}" />
     <h2>{{ product.name }}</h2>
     <p>{{ product.description }}</p>
     <p>Price: {{ product.price | currency }}</p>
+    <select class="select-input" [(ngModel)]="product.quantity">
+      <option *ngFor="let qty of [1, 2, 3, 4, 5]" [value]="qty">{{ qty }}</option>
+    </select>
     <button (click)="addToCart(product)">Add to Cart</button>
   </div>
 </div>

@@ -1,6 +1,8 @@
-img {
-  border-radius: 10px;
-  width: 320px;
+.product-image img {
+  max-width: 100%; /* Responsive image */
+  height: 100%; /* Fill the height of the container */
+  object-fit: cover; /* Cover the area while maintaining aspect ratio */
+  border-radius: 5px; /* Rounded corners for images */
 }
 
 .select-input {
