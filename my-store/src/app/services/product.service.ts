@@ -22,8 +22,4 @@ export class ProductService {
       }),
     );
   }
-
-  addToCart(product: Product): void {
-    console.log(`Added ${product.name} to cart.`);
-  }
 }

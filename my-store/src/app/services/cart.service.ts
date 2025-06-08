@@ -1,15 +1,23 @@
 import { Injectable } from '@angular/core';
+import { ProductService } from './product.service';
 import { Product } from '../models/interface';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CartService {
   private cartItems: Product[] = [];
+  products$!: Observable<Product[]>;
 
-  constructor() {}
+  constructor(private productService: ProductService) {}
 
+  ngOnInit(): void {
+    this.cartItems = this.getCartItems();
+    this.products$ = this.productService.getProducts();
+  }
   addToCart(product: Product): void {
+    console.log('cartServiceAdding to cart:', product);
     const existingProduct = this.cartItems.find(
       (item) => item.id === product.id,
     );
