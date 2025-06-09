@@ -1,36 +1,35 @@
 import { Injectable } from '@angular/core';
-import { ProductService } from './product.service';
+import { BehaviorSubject } from 'rxjs';
 import { Product } from '../models/interface';
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CartService {
   private cartItems: Product[] = [];
-  products$!: Observable<Product[]>;
+  private cartItemsSubject = new BehaviorSubject<Product[]>(this.cartItems);
 
-  constructor(private productService: ProductService) {}
+  cartItems$ = this.cartItemsSubject.asObservable();
 
-  ngOnInit(): void {
-    this.cartItems = this.getCartItems();
-    this.products$ = this.productService.getProducts();
-  }
   addToCart(product: Product): void {
-    console.log('cartServiceAdding to cart:', product);
+    console.log('Service Adding to cart:', product);
     const existingProduct = this.cartItems.find(
       (item) => item.id === product.id,
     );
+
     if (existingProduct) {
       existingProduct.quantity += 1;
     } else {
       product.quantity = 1;
       this.cartItems.push(product);
     }
+    console.log('Service Current cart items:', this.cartItems);
+    this.cartItemsSubject.next(this.cartItems);
   }
 
   removeFromCart(productId: number): void {
     this.cartItems = this.cartItems.filter((item) => item.id !== productId);
+    this.cartItemsSubject.next(this.cartItems);
   }
 
   getCartItems(): Product[] {
@@ -39,6 +38,7 @@ export class CartService {
 
   clearCart(): void {
     this.cartItems = [];
+    this.cartItemsSubject.next(this.cartItems);
   }
 
   getTotalItems(): number {

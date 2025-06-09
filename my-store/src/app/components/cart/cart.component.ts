@@ -12,8 +12,14 @@ export class CartComponent implements OnInit {
   cartItems: Product[] = [];
   totalItems: number = 0;
   totalPrice: number = 0;
+  name: string = '';
+  address: string = '';
+  paymentDetails: string = '';
 
-  constructor(private cartService: CartService, private router: Router) {} // Inject Router
+  constructor(
+    private cartService: CartService,
+    private router: Router,
+  ) {}
 
   ngOnInit(): void {
     this.loadCart();
@@ -23,6 +29,7 @@ export class CartComponent implements OnInit {
     this.cartItems = this.cartService.getCartItems();
     this.totalItems = this.cartService.getTotalItems();
     this.totalPrice = this.cartService.getTotalPrice();
+    console.log('Cart items loaded:', this.cartItems);
   }
 
   removeFromCart(productId: number): void {
