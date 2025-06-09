@@ -1,3 +1,4 @@
+<app-header></app-header>
 <div class="product-list">
   <div *ngFor="let product of products$ | async" class="product-item">
     <img [src]="product.url" alt="{{ product.name }}" />

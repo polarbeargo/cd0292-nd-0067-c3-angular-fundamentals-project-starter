@@ -7,6 +7,7 @@ import { ProductItemComponent } from './components/product-item/product-item.com
 import { ProductDetailsComponent } from './components/product-item-detail/product-item-detail.component';
 import { ConfirmationComponent } from './components/confirmation/confirmation.component';
 import { CartComponent } from './components/cart/cart.component';
+import { HeaderComponent } from './components/header/header.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'products', pathMatch: 'full' },
@@ -24,6 +25,7 @@ export const routes: Routes = [
     ProductDetailsComponent,
     ConfirmationComponent,
     CartComponent,
+    HeaderComponent,
   ],
   imports: [RouterModule.forChild(routes), CommonModule, FormsModule],
   exports: [RouterModule],
