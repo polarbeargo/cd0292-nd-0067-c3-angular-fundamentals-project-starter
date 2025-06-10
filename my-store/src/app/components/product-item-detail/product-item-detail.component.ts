@@ -29,4 +29,8 @@ export class ProductDetailsComponent implements OnInit {
   addToCart(product: Product): void {
     this.cartService.addToCart(product);
   }
+
+  goBack(): void {
+    window.history.back();
+  }
 }

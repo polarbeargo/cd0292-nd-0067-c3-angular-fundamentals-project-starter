@@ -12,8 +12,8 @@ import { HeaderComponent } from './components/header/header.component';
 export const routes: Routes = [
   { path: '', redirectTo: 'products', pathMatch: 'full' },
   { path: 'products', component: ProductListComponent },
-  { path: 'products/:item', component: ProductItemComponent },
   { path: 'products/:id', component: ProductDetailsComponent },
+  { path: 'products/:id', component: ProductItemComponent },
   { path: 'cart', component: CartComponent },
   { path: 'confirmation', component: ConfirmationComponent },
 ];

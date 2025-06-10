@@ -1,8 +1,18 @@
 <app-header></app-header>
 <div class="product-item-detail" *ngIf="product$ | async as product">
-  <img [src]="product.url" alt="{{ product.name }}" />
-  <h2>{{ product.name }}</h2>
-  <p>{{ product.description }}</p>
-  <p>Price: {{ product.price | currency }}</p>
-  <button (click)="addToCart(product)">Add to Cart</button>
+  <div class="product-image">
+    <img [src]="product.url" alt="{{ product.name }}" />
+  </div>
+  <div class="detail-item">
+    <h2>{{ product.name }}</h2>
+    <p>{{ product.description }}</p>
+    <p>Price: {{ product.price | currency }}</p>
+    <select class="select-input" [(ngModel)]="product.quantity">
+      <option *ngFor="let qty of [1, 2, 3, 4, 5]" [value]="qty">
+        {{ qty }}
+      </option>
+    </select>
+    <button (click)="addToCart(product)">Add to Cart</button>
+    <div class="back-link" (click)="goBack()">Back to Products</div>
+  </div>
 </div>
