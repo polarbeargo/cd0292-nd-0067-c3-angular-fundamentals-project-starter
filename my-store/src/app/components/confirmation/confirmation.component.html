@@ -23,3 +23,7 @@
 
   <button type="submit">Checkout</button>
 </form>
+<div *ngIf="isSuccess" class="success-message">
+  <h2>Checkout Successful!</h2>
+  <p>Thank you, {{ name }}! Your order has been placed successfully.</p>
+</div>

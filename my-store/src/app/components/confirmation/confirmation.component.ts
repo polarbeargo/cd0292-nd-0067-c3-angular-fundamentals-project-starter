@@ -10,6 +10,7 @@ export class ConfirmationComponent {
   name: string = '';
   address: string = '';
   paymentDetails: string = '';
+  isSuccess: boolean = false;
 
   constructor(private cartService: CartService) {}
 
@@ -20,5 +21,6 @@ export class ConfirmationComponent {
       address: this.address,
       paymentDetails: this.paymentDetails,
     });
+    this.isSuccess = true;
   }
 }
