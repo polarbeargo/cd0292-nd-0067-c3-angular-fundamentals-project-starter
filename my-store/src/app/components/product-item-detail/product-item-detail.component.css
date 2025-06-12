@@ -35,3 +35,21 @@
   color: #33b5e5;
   cursor: pointer;
 }
+
+.success-message {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #28a745;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.5s ease;
+  opacity: 1;
+}
+
+.success-message.ng-leave {
+  opacity: 0;
+}

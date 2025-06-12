@@ -13,6 +13,7 @@ import { CartService } from '../../services/cart.service';
 })
 export class ProductDetailsComponent implements OnInit {
   product$!: Observable<Product | undefined>;
+  showSuccessMessage: boolean = false;
   constructor(
     private route: ActivatedRoute,
     private productService: ProductService,
@@ -28,6 +29,10 @@ export class ProductDetailsComponent implements OnInit {
 
   addToCart(product: Product): void {
     this.cartService.addToCart(product);
+    this.showSuccessMessage = true;
+    setTimeout(() => {
+      this.showSuccessMessage = false;
+    }, 2000);
   }
 
   goBack(): void {

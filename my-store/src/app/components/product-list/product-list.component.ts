@@ -11,6 +11,7 @@ import { CartService } from '../../services/cart.service';
 })
 export class ProductListComponent implements OnInit {
   products$!: Observable<Product[]>;
+  showSuccessMessage: boolean = false;
   constructor(
     private productService: ProductService,
     private cartService: CartService,
@@ -23,5 +24,9 @@ export class ProductListComponent implements OnInit {
   addToCart(product: Product): void {
     console.log('list Adding to cart:', product);
     this.cartService.addToCart(product);
+    this.showSuccessMessage = true;
+    setTimeout(() => {
+      this.showSuccessMessage = false;
+    }, 2000);
   }
 }

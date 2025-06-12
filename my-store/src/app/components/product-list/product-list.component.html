@@ -15,3 +15,7 @@
     <button (click)="addToCart(product)">Add to Cart</button>
   </div>
 </div>
+
+<div *ngIf="showSuccessMessage" class="success-message">
+  Product added to cart successfully!
+</div>
