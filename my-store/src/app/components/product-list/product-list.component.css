@@ -34,6 +34,15 @@
   border-radius: 5px;
 }
 
+.product-item img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
 .product-name {
   font-size: 1.5em;
   color: #333;
@@ -88,4 +97,3 @@
 .success-message.ng-leave {
   opacity: 0;
 }
-
