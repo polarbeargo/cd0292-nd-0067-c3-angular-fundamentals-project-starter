@@ -15,6 +15,7 @@ export class CartComponent implements OnInit {
   name: string = '';
   address: string = '';
   paymentDetails: string = '';
+  feedbackMessage: string = '';
 
   constructor(
     private cartService: CartService,
@@ -34,7 +35,11 @@ export class CartComponent implements OnInit {
 
   removeFromCart(productId: number): void {
     this.cartService.removeFromCart(productId);
+    this.feedbackMessage = 'Item removed from cart!';
     this.loadCart();
+    setTimeout(() => {
+      this.feedbackMessage = '';
+    }, 3000);
   }
 
   goToCheckout(): void {

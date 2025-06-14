@@ -19,4 +19,7 @@
     <h3>Checkout</h3>
     <button (click)="goToCheckout()">Proceed to Checkout</button>
   </div>
+  <div *ngIf="feedbackMessage" class="feedback-message">
+    {{ feedbackMessage }}
+  </div>
 </div>
