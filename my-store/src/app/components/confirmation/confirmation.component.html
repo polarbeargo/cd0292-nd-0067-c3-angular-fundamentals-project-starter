@@ -2,6 +2,7 @@
 <form (ngSubmit)="onSubmit()">
   <label for="name">Name:</label>
   <input type="text" id="name" [(ngModel)]="name" name="name" required />
+  <div *ngIf="nameError" class="error-message">{{ nameError }}</div>
 
   <label for="address">Address:</label>
   <input
@@ -11,6 +12,7 @@
     name="address"
     required
   />
+  <div *ngIf="addressError" class="error-message">{{ addressError }}</div>
 
   <label for="payment">Payment Details:</label>
   <input
@@ -20,6 +22,7 @@
     name="payment"
     required
   />
+  <div *ngIf="paymentError" class="error-message">{{ paymentError }}</div>
 
   <button type="submit">Checkout</button>
 </form>
