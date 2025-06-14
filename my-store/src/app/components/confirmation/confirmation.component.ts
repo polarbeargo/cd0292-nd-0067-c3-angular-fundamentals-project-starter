@@ -43,4 +43,19 @@ export class ConfirmationComponent {
         ? 'Payment details must be a number.'
         : '';
   }
+
+  onNameChange(value: string): void {
+    this.name = value;
+    this.validateForm();
+  }
+
+  onAddressChange(value: string): void {
+    this.address = value;
+    this.validateForm();
+  }
+
+  onPaymentChange(value: string): void {
+    this.paymentDetails = value;
+    this.validateForm();
+  }
 }

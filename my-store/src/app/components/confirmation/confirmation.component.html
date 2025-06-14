@@ -1,7 +1,14 @@
 <app-header></app-header>
 <form (ngSubmit)="onSubmit()">
   <label for="name">Name:</label>
-  <input type="text" id="name" [(ngModel)]="name" name="name" required />
+  <input
+    type="text"
+    id="name"
+    [(ngModel)]="name"
+    name="name"
+    required
+    (ngModelChange)="onNameChange($event)"
+  />
   <div *ngIf="nameError" class="error-message">{{ nameError }}</div>
 
   <label for="address">Address:</label>
@@ -11,6 +18,7 @@
     [(ngModel)]="address"
     name="address"
     required
+    (ngModelChange)="onAddressChange($event)"
   />
   <div *ngIf="addressError" class="error-message">{{ addressError }}</div>
 
@@ -21,6 +29,7 @@
     [(ngModel)]="paymentDetails"
     name="payment"
     required
+    (ngModelChange)="onPaymentChange($event)"
   />
   <div *ngIf="paymentError" class="error-message">{{ paymentError }}</div>
 
