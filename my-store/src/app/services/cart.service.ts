@@ -17,11 +17,13 @@ export class CartService {
       (item) => item.id === product.id,
     );
 
+    const addQty = Number(product.quantity);
+
     if (existingProduct) {
-      existingProduct.quantity += 1;
+      existingProduct.quantity = Number(existingProduct.quantity) + addQty;
+      console.log('existingProduct', existingProduct.quantity);
     } else {
-      product.quantity = 1;
-      this.cartItems.push(product);
+      this.cartItems.push({ ...product, quantity: addQty });
     }
     console.log('Service Current cart items:', this.cartItems);
     this.cartItemsSubject.next(this.cartItems);
@@ -47,7 +49,7 @@ export class CartService {
 
   getTotalPrice(): number {
     return this.cartItems.reduce(
-      (total, item) => total + item.price * item.quantity,
+      (total, item) => total + item.price * (item.quantity),
       0,
     );
   }
