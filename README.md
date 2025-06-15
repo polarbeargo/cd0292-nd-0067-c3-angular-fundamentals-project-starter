@@ -38,19 +38,17 @@ To run the MyStore project, follow these steps:
 
 ## Development strategy
 
-We applied the `Observer` design pattern is already built into the core and is available through the EventEmitter class. It is used to create custom events in this Angular application. The Observer pattern allows components to communicate with each other without being tightly coupled, promoting a more modular and maintainable codebase.
+We applied the `Observer` design pattern is already built into the core and is available through the EventEmitter class. It is used to create custom events in this Angular application.
 
 - The `async pipe` is used for subscribing to observables in `templates` and handling the lifecycle of subscriptions which is efficient in terms of memory management because it automatically handles subscriptions.
 - The `BehaviorSubject` is used to hold and manage `cart state`, providing the current value to subscribers which is is efficient for state management, especially when we `emit` the current value to new subscribers immediately which helps to maintain and update state across different `components` or `services`.
 
 1.  The `*ngFor` directive iterates over the `products emitted` by the `products$` `observable` using the `async pipe` whenever the observable `emits` new data, the template will automatically update.
 2.  Each product is passed to the ProductItemComponent via the product input binding.
-3.  The (addToCart) output `event` from the ProductItemComponent is listened to in the ProductListComponent, and it calls the addToCart method with the `emitted` product.
 
-4. The `ProductService` is used to fetch the list of products from a static JSON file. It provides an observable that emits the product data, which is then consumed by the ProductListComponent.   
-5.  The CartComponent will use the `CartService` to manage the cart's state, display the items in the cart, and allow users to remove items or proceed to checkout the HTML template for the CartComponent. This template will display the items in the cart, the total price, and a checkout button to lauch a checkout `form` once subitted will clear the cart items display a confirmation success message.
-
-
+3. The `ProductService` is used to fetch the list of products from a static JSON file. It provides an `observable` that `emits` the product data, which is then consumed by the `ProductListComponent`.   
+4.  The CartComponent will use the `CartService` to manage the cart's state, display the items in the cart, and allow users to remove items or proceed to checkout the HTML template for the CartComponent. This template will display the items in the cart, the total price, and a checkout button to navigate to a checkout `form`.  
+5. The `ConfirmationComponent` integrates with the `ngModelChange` and Angular `events` to provide real-time feedback to the user during the checkout process. By using Angular's `FormsModule` to handle form validation and submission. It collects user information and payment details, and upon successful submission, it clears the cart and displays a confirmation success message.
 
 ## Software Design Architecture 
 ![](my-store/images/architecture-diagram.png)
